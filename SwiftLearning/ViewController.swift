@@ -27,12 +27,12 @@ class ViewController: UIViewController {
      ortalaması 50 ve uzeri ise "Geçti" yazsın eğer küçükse "Kaldı" yazsın. */
     
     @IBAction func hesaplaBtn(_ sender: Any) {
-        let vizeLbl = Int(vizeNotu.text ?? "0")
-        let finalLbl = Int(finalNotu.text ?? "0")
+        let vizeLbl = vizeNotu.text ?? "0"
+        let finalLbl = finalNotu.text ?? "0"
         
-        let notunuz = (vizeLbl + finalLbl) / 2
+        let notunuz = (Int(vizeLbl)! + Int(finalLbl)!) / 2
         
-        notunuzLbl.text = "\(notunuz)"
+        notunuzLbl.text = "Notunuz: \(notunuz)"
         
     }
 }
