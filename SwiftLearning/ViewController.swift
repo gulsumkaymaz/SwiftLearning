@@ -8,36 +8,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var vizeNotu: UITextField!
+    
     @IBOutlet weak var finalNotu: UITextField!
-    @IBOutlet weak var notlarOrtalaması: UILabel!
+    @IBOutlet weak var notunuzLbl: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        /*Example 1: 2 adet not bilgisi girilecek.
-         ortalaması 50 ve uzeri ise "Geçti" yazsın eğer küçükse "Kaldı" yazsın. */
-        
     }
     
-        
+    /*Example 1: 2 adet not bilgisi girilecek.
+     İkisini topla ve notunuz alanina yazdir. */
+    
+    /*Example 1: 2 adet not bilgisi girilecek.
+     ortalaması 50 ve uzeri ise "Geçti" yazsın eğer küçükse "Kaldı" yazsın. */
+    
     @IBAction func hesaplaBtn(_ sender: Any) {
+        let vizeLbl = Int(vizeNotu.text ?? "0")
+        let finalLbl = Int(finalNotu.text ?? "0")
         
-        var note1 = vizeNotu.text ?? "0"
-        var note2 = finalNotu.text ?? "0"
+        let notunuz = (vizeLbl + finalLbl) / 2
         
-        var ort = (Int(note1)! + Int(note2)!) / 2
-        if ort >= 50 {
-            notlarOrtalaması.text = "Geçti"
-        } else {
-            notlarOrtalaması.text = "Kaldı"
-        }
-        
+        notunuzLbl.text = "\(notunuz)"
         
     }
-    
 }
     
         
